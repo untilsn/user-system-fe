@@ -2,13 +2,115 @@
 @import "tailwindcss";
 
 * {
-  font-family: "Outfit", serif;
+  font-family: "Outfit", sans-serif;
+  @apply text-black leading-relaxed;
 }
 
+/* Container chính */
 .container {
-  @apply min-h-screen max-w-7xl w-full mx-auto px-6 flex flex-col items-center justify-center;
+  @apply min-h-screen max-w-7xl w-full mx-auto px-8 flex flex-col items-center justify-center;
 }
 
+/* Background */
 .bg-image {
-  @apply   min-h-screen bg-[url("/bg_img.png")] bg-center bg-cover
+  @apply min-h-screen bg-[url("/bg_img.png")] bg-center bg-cover;
+}
+
+/* Styles for Tiptap Editor */
+.tiptap-container {
+  @apply w-full border border-gray-300 rounded-md overflow-hidden bg-white shadow;
+}
+
+.tiptap-toolbar {
+  @apply flex flex-wrap gap-2 px-3 py-2 bg-gray-100 border-b border-gray-300;
+}
+
+.tiptap-toolbar button {
+  @apply p-2 rounded-md hover:bg-gray-300 transition;
+}
+
+.tiptap-toolbar button.is-active {
+  @apply bg-gray-400;
+}
+
+.tiptap {
+  @apply w-full px-4 py-3 text-black min-h-[250px] focus:outline-none;
+}
+
+/* Styling for Lists */
+.tiptap ul, .tiptap ol {
+  @apply pl-5 my-2 list-inside;
+}
+
+.tiptap ul li {
+  @apply list-disc ml-4;
+}
+
+.tiptap ol li {
+  @apply list-decimal ml-4;
+}
+
+/* Styling for Headings */
+.tiptap h1, .tiptap h2, .tiptap h3, .tiptap h4, .tiptap h5, .tiptap h6 {
+  @apply font-bold leading-tight text-black;
+}
+
+.tiptap h1 {
+  @apply text-3xl mt-4 mb-3;
+}
+
+.tiptap h2 {
+  @apply text-2xl mt-3 mb-2;
+}
+
+.tiptap h3 {
+  @apply text-xl mt-2 mb-2;
+}
+
+.tiptap h4 {
+  @apply text-lg mt-2 mb-1;
+}
+
+/* Code Block */
+.tiptap pre {
+  @apply bg-gray-900 text-white font-mono rounded-md p-4 my-3 overflow-x-auto;
+}
+
+.tiptap code {
+  @apply bg-gray-200 text-black text-sm px-2 py-1 rounded;
+}
+
+/* Blockquote */
+.tiptap blockquote {
+  @apply border-l-4 border-gray-400 pl-3 italic text-gray-600 my-2;
+}
+
+/* Horizontal Line */
+.tiptap hr {
+  @apply border-gray-300 my-3;
+}
+
+/* Button Group */
+.control-group {
+  @apply flex flex-wrap gap-2 bg-gray-100 border-b border-gray-300 p-2 w-full;
+}
+
+.button-group {
+  @apply flex flex-wrap gap-2;
+}
+
+.button-group button {
+  @apply bg-transparent text-black border-none px-2 py-1 text-sm cursor-pointer transition-all duration-200;
+}
+
+.button-group button:hover {
+  @apply bg-gray-300;
+}
+
+.button-group button.is-active {
+  @apply bg-gray-400;
+}
+
+.button-group button:disabled {
+  @apply opacity-50 cursor-not-allowed;
 }

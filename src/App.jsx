@@ -15,6 +15,7 @@ import { updateUserDetails } from './store/redux/slice/userSlice'
 import { getDetailsUser } from './services/userService'
 import Navbar from './components/Navbar'
 import ProfilePage from './pages/ProfilePage'
+import StorePage from './pages/StorePage'
 
 const App = () => {
   const dispatch = useDispatch()
@@ -54,6 +55,8 @@ const App = () => {
           <Route path='reset-password' element={<ResetPasswordPage />}></Route>
         </Route>
         <Route path='/profile' element={<ProfilePage/>}></Route>
+        <Route path='/product' element={<StorePage/>}></Route>
+        
       </Routes>
     </div>
   )
